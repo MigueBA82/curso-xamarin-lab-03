@@ -2,6 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApp.Views.ToDosPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Clear" Order="Primary" x:Name="toolbarItemClear" />
+        <ToolbarItem Text="Refresh" Order="Secondary" x:Name="toolbarRefresh" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout x:Name="Root">
             <StackLayout x:Name="ItemsContainer">
@@ -9,7 +13,7 @@
                     <DataTemplate>
                         <StackLayout Orientation="Horizontal">
                             <CheckBox IsChecked="true"/>
-                            <Label Text="{Binding}"/>
+                            <Label Text="{Binding Title}"/>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
